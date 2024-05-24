@@ -35,3 +35,62 @@ people.friends.push(friend1);
 people.friends.push(friend2);
 people.friends.push(friend3);
 console.log(people);
+/*Assignment 2:Manipulating an Array: Rearranging Words
+Objective:
+Rearrange an array using array methods to form the sentence "I am a student of GIAIC".
+Steps:
+1. Scrambled Array:
+o Start with an array of elements in a scrambled order, like:
+
+const scrambledArray = ["student", "of",true, 123, "am", "a", "GIAIC", "I"];
+• Modify the Array:
+• Use methods like split(), join(), push(), pop(), shift(), and unshift() to:
+o Convert non-strings (booleans, numbers) to strings if needed.
+o Split elements into character arrays (optional).
+o Rearrange characters or elements in the desired order (modify original array or
+create temporary arrays).
+
+• Output the Result:
+• Use join() to combine elements back into a single string: "I am a student of GIAIC".*/
+const scrambledArray = ["student", "of",true, 123, "am", "a", "GIAIC", "I"];
+scrambledArray.splice(2,2);
+scrambledArray.unshift("I");
+scrambledArray.pop();
+scrambledArray.splice(1,0,"am","a");
+scrambledArray.splice(5,2);
+let rearrangearray=scrambledArray.join(" ");
+console.log(rearrangearray);
+/*Assignment 3: Company Product Catalog
+Learning Objective: Implement data structures in TypeScript to represent and manage product
+information.
+Task: Create a program to represent a product catalog using an array and perform basic queries.
+1. Define an array named inventory to store product information.
+2. Create three separate objects, each representing a product, with properties like name,
+model, cost, and quantity.
+3. Add these product objects to the inventory array using an appropriate array method.
+4. Access and log the quantity property of a specific product (e.g., third product) in the
+inventory array.
+5. Explore adding and accessing more elements within the inventory array to understand
+how to manage product data.*/
+type Product={
+    name:string,
+    model:string,
+    cost:number,
+    quantity:number
+
+}
+let inventory:Product[]=[]
+let product1:Product={name:"laptop",model:"XP123",cost:45000,quantity:1200};
+let product2:Product={name:"smartwatch",model:"X90123",cost:35000,quantity:10000};
+let product3:Product={name:"mobile",model:"redmenote10",cost:55000,quantity:1000};
+inventory.push(product1);
+inventory.push(product2);
+inventory.push(product3);
+console.log(`quantity of third product:`,inventory[2].quantity);
+let product4:Product={name:"microwave",model:"X90123",cost:20000,quantity:2000};
+let product5:Product={name:"headphone",model:"redmenote10",cost:1500,quantity:3000};
+inventory.push(product4,product5)
+
+console.log("price of fifth product is",inventory[4].cost);
+
+console.log(inventory);
