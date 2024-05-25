@@ -57,3 +57,39 @@ var product5 = { name: "headphone", model: "redmenote10", cost: 1500, quantity: 
 inventory.push(product4, product5);
 console.log("price of fifth product is", inventory[4].cost);
 console.log(inventory);
+var students = [];
+var student1 = { name: "khizar", isSenior: true, Hascompletedassignment: true };
+var student2 = { name: "khadija", isSenior: true, Hascompletedassignment: false };
+var student3 = { name: "omer", isSenior: false, Hascompletedassignment: false };
+var student4 = { name: "rabia", isSenior: true, Hascompletedassignment: true };
+var student5 = { name: "khoula", isSenior: true, Hascompletedassignment: false };
+students.push(student1, student2, student3, student4, student5);
+console.log(students);
+function seniorStudentwithassignment(students) {
+    var seniorStudentwithassignment = [];
+    students.forEach(function (student) {
+        if (student.isSenior && student.Hascompletedassignment) {
+            seniorStudentwithassignment.push(student);
+        }
+    });
+    return seniorStudentwithassignment;
+}
+var seniorStudent = seniorStudentwithassignment(students);
+console.log(seniorStudentwithassignment);
+seniorStudent.forEach(function (student) {
+    console.log(student.name);
+});
+function updatedlist(students) {
+    var updatedclasslist = [];
+    students.forEach(function (student) {
+        if (!student.isSenior || student.Hascompletedassignment) {
+            updatedclasslist.push(student);
+        }
+    });
+    return updatedclasslist;
+}
+var updatedclasslist = updatedlist(students);
+console.log(updatedclasslist);
+updatedclasslist.forEach(function (student) {
+    console.log(student.name);
+});

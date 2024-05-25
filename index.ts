@@ -94,3 +94,68 @@ inventory.push(product4,product5)
 console.log("price of fifth product is",inventory[4].cost);
 
 console.log(inventory);
+/*Assignment 4: Student List Organizer
+Learning Objective: Get comfortable with data structures (objects and arrays) and basic
+functions in TypeScript.
+Tasks:
+1. Student Data: The provided code defines an interface named Student that describes
+student information like name, senior status (true/false), and whether they've completed
+their assignments (true/false).
+o Imagine this as a template for organizing student details.
+2. Student List:
+o An array named students stores information about several students using the
+Student template. Think of this array as your class list!
+3. Find Senior Students with Assignments (Optional):
+o The code (not shown here) has a function that might find students who are seniors
+and have completed their assignments.
+o Can you guess why this information might be helpful?
+4. Class List Update:
+o Imagine you need to update your class list! The code (not shown here) might have
+a function that removes students who haven't completed their assignments
+(assuming only seniors are responsible).
+o Can you think of any reasons why this might be useful (consider limitations)?*/
+interface Student {
+    name:string,
+    isSenior:boolean,
+    Hascompletedassignment:boolean
+}
+let students:Student[]=[];
+let student1:Student={name:"khizar",isSenior:true,Hascompletedassignment:true};
+let student2:Student={name:"khadija",isSenior:true,Hascompletedassignment:false};
+let student3:Student={name:"omer",isSenior:false,Hascompletedassignment:false};
+let student4:Student={name:"rabia",isSenior:true,Hascompletedassignment:true};
+let student5:Student={name:"khoula",isSenior:true,Hascompletedassignment:false};
+students.push(student1,student2,student3,student4,student5);
+console.log(students);
+function seniorStudentwithassignment (students:Student[]){
+    let seniorStudentwithassignment:Student[]=[];
+    students.forEach(student =>{
+        if(student.isSenior && student.Hascompletedassignment){
+            seniorStudentwithassignment.push(student)
+        }
+    })
+    return seniorStudentwithassignment
+}
+
+let seniorStudent=seniorStudentwithassignment(students);
+console.log(seniorStudentwithassignment);
+seniorStudent.forEach(student => {
+    console.log(student.name);});
+    function updatedlist(students:Student[]){
+        let updatedclasslist:Student[]=[]; 
+        students.forEach(student =>{
+            if(!student.isSenior || student.Hascompletedassignment){
+                updatedclasslist.push(student)
+            }
+       
+        })
+        return updatedclasslist
+    }
+    let updatedclasslist=updatedlist(students);
+console.log(updatedclasslist);
+    updatedclasslist.forEach(student =>{
+        console.log(student.name);
+    });
+   
+      
+
